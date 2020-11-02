@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- All CSS -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/apexcharts.css">
+    <link rel="stylesheet" href="assets/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/css/tagify.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <title>Staking DASHBOARD DFX</title>
+  </head>
+  <body class="theme-dark" id="body">
+    <div id="main-wrapper">
+
+      <!-- Header strat -->
+      <header class="header sticky-header">
+        <div class="container-fluid">
+
+          <div class="d-flex align-items-center">
+            <a href="dashboard-ecommerce.html" class="logo">
+              <img src="assets/images/logo1.png" alt=" />
+            </a>
+            
+            <!-- <a href="#" class="menu-toggler">
+              
+            </a> -->
+
+
+            <ul class="navbar-nav utility-nav ml-auto">
+              <li class="nav-item expand-screen">
+                <a href="javascript:void(0);">
+                  <i class="fas fa-expand"></i>
+                </a>
+
+
+
+
+
+              <li class="nav-item nav-profile">
+
+                <a class="user-profile" href="#" role="button" id="profiletab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <figure class="avatar-circle-sm">
+                    <img src="assets/images/metamask.svg" alt="">
+                    <span class="presence-indicator online"></span>
+                  </figure>
+                  <strong class="user-name"><i class="fas fa-angle-down"></i></strong>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="profiletab">
+                  <a href="#">
+                    <i class="far fa-user"></i>
+                    <div class="text">
+                      <p>Switch wallet</p>
+                    </div>
+                  </a>
+                  
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </header>
+      <!-- Header strat -->
+
+      <main class="main-container">
+
+        <nav class="sidebar sidebar-main">
+          <ul class="accordion" id="accordion">
+            <li class="nav-item">
+              <a href="#">
+                <i class="fas fa-tachometer-alt"></i>
+                <span> DFX staking Dashboard</span>
+              </a>
+              
+            </li>
+
+        </nav>
+
+          <div class="page-container">
+            <!-- <div class="container"> -->
+              <div class="sec-summary pt-0">
+                <div class="row">
+                  <div class="col-md-3 col-6">
+                    <div class="gradientBox white-bg">
+                      <span class="iconbox"><img src="assets/images/icons/summary/calendar.png" alt="" /></span>
+                      <div class="gradientBox-content">
+                        <h5 class="title">Total days staked</h5>
+                        <p>15 <small class="g-ratio downward"></small></p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-3 col-6">
+                    <div class="gradientBox white-bg">
+                      <span class="iconbox"><img src="assets/images/icons/summary/dollar.png" alt="" / ></span>
+                      <div class="gradientBox-content">
+                        <h5 class="title">Totally Staked</h5>
+                        <p>500 DFX <small class="g-ratio upward">12%</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-lg-8">
+                  <div class="card card-stretch daily-progress">
+                    <div class="d-md-flex align-items-center">
+                      <div class="card-header flex-grow-1">
+                        <h4 class="card-title">Staking statistics</h4>
+                        <span>Last 7 days</span>
+                      </div>
+                      <div class="custom-daterange">
+                        <i class="far fa-calendar-alt"></i>
+                        <input type="text" class="daterange" />
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="progress_chart"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-lg-4">
+                  <div class="card card-stretch money-transfer">
+                    <div class="card-header mb-5">
+                      <h4 class="card-title">Staking</h4>
+                    </div>
+                    <div class="card-body">
+                      <ul class="nav nav-tabs nav-btn-filled mb-5">
+                        <li><a data-toggle="tab" class="active" href="#send">Stake</a></li>
+                        <li><a data-toggle="tab" href="#request">Unstake</a></li>
+                      </ul>
+
+                      <div class="tab-content">
+                        <div id="send" class="tab-pane fade in active show">
+                          <form class="coin-form">
+                            <div class="form-group">
+                              <label for="sendMoney">Aveilable amount in wallet</label>
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="sendMoney" placeholder="278 DFX">
+                                <div class="input-group-append">
+                                  <select class="input-group-text nice-select">
+                                    <option value="">DFX</option>
+
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="receiveMoney">Amount to stake</label>
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="receiveMoney" placeholder="50 DFX">
+                                <div class="input-group-append">
+                                  <select class="input-group-text nice-select">
+                                    <option value="">DFX</option>
+
+                                  </select>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-filled w-100">Stake</button>
+                          </form>
+                        </div>
+                        <div id="request" class="tab-pane fade">
+                          <form class="coin-form">
+                            <div class="form-group">
+                              <label for="reqMoney">Unstake amount</label>
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="reqMoney" placeholder="400 DFX">
+                                <div class="input-group-append">
+                                  <select class="input-group-text nice-select">
+                                    <option value="">DFX</option>
+                                   
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="EXreceiveMoney">Reward</label>
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="EXreceiveMoney" placeholder="20 DFX">
+                                <div class="input-group-append">
+                                  <select class="input-group-text nice-select">
+                                    <option value="">DFX</option>
+                                    
+                                  </select>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-filled w-100">Unstake</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+             
+
+              <div class="row">
+                
+            <!-- </div> -->
+          </div>
+
+          <aside class="sidebar sidebar-secondary">
+
+          </aside>
+
+      </main>
+
+      <!-- Footer strat -->
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <p>2020 Definitex. All Rights Reserved to Definitex</a></p>
+            </div>
+            <div class="col-md-4 text-md-right">
+              
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer end -->
+
+      <!-- Modal Box -->
+     
+
+      
+
+    </div>
+
+    <!-- JS -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/apexcharts.min.js"></script>
+    <script src="assets/js/ckeditor.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/daterangepicker.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/mixitup.min.js"></script>
+    <script src="assets/js/tagify.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/chart-options.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>
